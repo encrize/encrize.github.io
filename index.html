@@ -57,7 +57,6 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <noscript><style>
-  #boot,.skip-hint{display:none!important;}
   html,body{height:auto!important;overflow:auto!important;}
   .wrap{height:auto!important;}
 </style></noscript>
@@ -72,11 +71,9 @@
   --faint:#9a948a;
   --red:#d8484d;
   --red-line:#9e1015;
-  --amber:#b8893f;
   --green:#85a06e;
   --line:#2a2722;
   --mono:'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
-  --serif:var(--mono);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
@@ -84,7 +81,7 @@
 html,body{min-height:100%;}
 body{
   color:var(--ink);font-family:var(--mono);
-  line-height:1.6;cursor:default;
+  line-height:1.6;
   min-height:100vh;overflow-x:hidden;
   background:
     linear-gradient(rgba(10,10,11,var(--bg-shade)),rgba(10,10,11,var(--bg-shade))),
@@ -92,28 +89,15 @@ body{
     var(--bg);
 }
 
-.crt{position:fixed;inset:0;z-index:60;pointer-events:none;
-  background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px),
-  radial-gradient(ellipse at 60% 40%,transparent 60%,rgba(0,0,0,.55) 100%);
-  animation:flick 11s infinite;}
-@keyframes flick{0%,100%{opacity:1;}94%{opacity:1;}95%{opacity:.82;}96%{opacity:1;}}
-
 #boot{position:fixed;inset:0;z-index:80;background:#000;color:#c9c9c9;
   font-family:var(--mono);font-size:13px;line-height:1.7;padding:6vh 5vw;
-  white-space:pre-wrap;transition:opacity .5s;cursor:pointer;overflow:hidden;}
+  white-space:pre-wrap;transition:opacity .4s;cursor:pointer;overflow:hidden;}
 #boot.gone{opacity:0;pointer-events:none;}
 #boot .ok{color:#46c84a;}
-#boot .warn{color:#d8a13a;}
 #boot .dim{color:var(--faint);}
 .cur{display:inline-block;width:8px;height:14px;background:#c9c9c9;
   margin-left:2px;vertical-align:text-bottom;animation:bl 1s steps(2) infinite;}
 @keyframes bl{50%{opacity:0;}}
-.skip-hint{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);
-  z-index:81;color:#e4e4e4;font-family:var(--mono);font-size:12px;
-  letter-spacing:.18em;padding:9px 16px;
-  pointer-events:none;opacity:.85;animation:hintpulse 1.6s ease-in-out infinite;}
-#boot.gone ~ .skip-hint{display:none;}
-@keyframes hintpulse{0%,100%{opacity:.65;}50%{opacity:.9;}}
 
 .wrap{position:relative;z-index:10;max-width:1100px;margin:0;
   padding:clamp(28px,5vh,56px) 6vw;min-height:100vh;
@@ -125,20 +109,13 @@ body{
 
 h1.name{font-family:var(--mono);font-weight:500;
   font-size:clamp(40px,8vw,88px);line-height:.98;letter-spacing:-.02em;
-  color:var(--ink);position:relative;display:inline-block;}
+  color:var(--ink);}
 h1.name i{font-style:italic;font-weight:400;color:var(--faint);font-size:.3em;
   display:block;margin-top:clamp(8px,1.4vh,16px);letter-spacing:.02em;}
-h1.name::after{content:attr(data-t);position:absolute;left:0;top:0;
-  color:var(--red);opacity:0;mix-blend-mode:screen;
-  animation:rare 9s infinite;}
-@keyframes rare{0%,97%,100%{opacity:0;transform:none;}
-  97.5%{opacity:.7;transform:translate(-3px,1px);}98%{opacity:.5;transform:translate(2px,-1px);}}
 
 .win{font-family:var(--mono);background:var(--paper);
   border:1px solid var(--line);
-  max-width:480px;margin-top:clamp(16px,3vh,32px);
-  box-shadow:5px 6px 0 rgba(0,0,0,.5);
-  transform:rotate(-.6deg);}
+  max-width:800px;margin-top:clamp(16px,3vh,32px);}
 .win .bar{display:flex;align-items:center;
   background:#161317;border-bottom:1px solid var(--line);
   padding:6px 12px;font-size:12px;letter-spacing:.04em;}
@@ -163,30 +140,22 @@ ul.links a:hover::before{content:"\00bb ";color:var(--red);}
   z-index:12;opacity:.8;}
 .marg.r{right:18px;top:34%;transform:rotate(90deg);transform-origin:right top;
   letter-spacing:.3em;}
-.marg.note{right:6vw;top:16vh;max-width:170px;color:var(--ink);opacity:.6;
-  transform:rotate(2.2deg);border-left:2px solid var(--red-line);padding-left:9px;
-  line-height:1.5;}
-.marg.cnt{left:6vw;bottom:6vh;}
-.marg.cnt b{color:var(--green);}
 
 .foot{font-family:var(--mono);font-size:11px;color:var(--faint);
   margin-top:clamp(14px,2.6vh,28px);letter-spacing:.05em;}
 .foot .rev{color:var(--red);}
 
 @media(max-width:640px){
-  .marg.r,.marg.note{display:none;}
-  .win{transform:none;}
+  .marg.r{display:none;}
 }
 </style>
 </head>
 <body>
-<div class="crt"></div>
 
 <div id="boot" aria-hidden="true"><div id="bootlog"></div></div>
-<div class="skip-hint" id="skipHint" aria-hidden="true">click to skip</div>
 
 <div class="marg r">// li4m1BRjawGHwRyaQjnZ</div>
-<div class="marg note">p.s. still building this</div>
+<!-- <div class="marg note">side note</div> -->
 
 <main class="wrap">
 <div class="sys">node <b>encrize</b> · <span id="clock">--:--:--</span> · layer 01</div>
@@ -196,9 +165,10 @@ ul.links a:hover::before{content:"\00bb ";color:var(--red);}
 <section class="win" aria-label="about">
 <div class="bar"><span class="ttl">~/about.txt</span><span class="ctrl">— □ ✕</span></div>
 <div class="body" id="about">
-<p>hi! i'm encrize, a developer and cybersecurity specialist living somewhere between a code editor and a packet dump.</p>
-<p>i build websites, mobile apps and some games, but most of my time goes low-level: reverse engineering and malware analysis in c &amp; assembly to learn how things really tick, picking binaries apart and prodding at them until they spill their secrets.</p>
-<p>breaking things to understand them is basically the hobby. this is my corner of the web.</p>
+<p>hey, i'm encrize - 18y.o. developer and cybersec student. i'm online most of the time, lately messing around with game dev in Godot.</p>
+<p>i make websites, apps, and the occasional game, but honestly most of my time goes into reverse engineering and malware analysis - c and assembly, poking at binaries until they tell me what they're hiding. you know there's something satisfying about taking something apart piece by piece until it finally makes sense.</p>
+<p>i guess breaking stuff to understand it is just... my thing. anyway, welcome to my corner of the internet. i built this site because i love the old-school 2000s web aesthetic, back when people made personal websites instead of just having profiles on major platforms. in my free time, i'll be expanding this site and adding more info about myself.</p>
+<p>feel free to check my projects or text me if you want to talk!</p>
 <p class="sig">- encrize</p>
 <p class="prompt">encrize@node:~$ <span class="cur"></span></p>
 </div>
@@ -208,7 +178,7 @@ ul.links a:hover::before{content:"\00bb ";color:var(--red);}
 <ul class="links">
 <li><a href="https://github.com/encrize" target="_blank" rel="me noopener">github</a></li>
 <li><a href="https://t.me/encrize" target="_blank" rel="me noopener">telegram</a></li>
-<li><a href="https://www.youtube.com/@encrize" target="_blank" rel="me noopener">youtube</a></li>
+<li><a href="https://www.youtube.com/@%E6%9C%9D%E5%80%89%E6%B6%BC%E5%AD%90" target="_blank" rel="me noopener">youtube</a></li>
 <li><a href="https://x.com/encrizedev" target="_blank" rel="me noopener">x</a></li>
 <li><a href="mailto:ez.encrize@proton.me">mail</a></li>
 <li><a href="https://github.com/encrize?tab=repositories" target="_blank" rel="me noopener">projects</a></li>
@@ -228,29 +198,11 @@ clk.textContent=[n.getHours(),n.getMinutes(),n.getSeconds()]
 
 const boot=document.getElementById('boot');
 const log=document.getElementById('bootlog');
-const hint=document.getElementById('skipHint');
 const L=[
 '[    0.000000] Linux version 6.9.3-arch1-1 (linux@archlinux) (gcc 14.1.1) #1 SMP PREEMPT_DYNAMIC',
-'[    0.000000] Command line: BOOT_IMAGE=/vmlinuz-linux root=UUID=8f3a-4c1b rw quiet loglevel=3',
-'[    0.213447] Memory: 16312324K/16777216K available',
 '[    0.488120] systemd[1]: systemd 256.4-1-arch running in system mode.',
-'[    0.512043] systemd[1]: Detected architecture x86-64.',
-'[    0.534881] systemd[1]: Hostname set to <node>.',
-'         Starting Journal Service...',
-'<span class="ok">[  OK  ]</span> Started Journal Service.',
-'<span class="ok">[  OK  ]</span> Mounted /boot.',
-'<span class="ok">[  OK  ]</span> Reached target Local File Systems.',
-'         Starting Load/Save Random Seed...',
-'<span class="ok">[  OK  ]</span> Finished Load/Save Random Seed.',
-'<span class="ok">[  OK  ]</span> Why you read that...',
-'<span class="ok">[  OK  ]</span> Started udev Kernel Device Manager.',
-'         Starting Network Manager...',
 '<span class="ok">[  OK  ]</span> Started Network Manager.',
-'<span class="ok">[  OK  ]</span> Reached target Network.',
-'<span class="ok">[  OK  ]</span> Started OpenSSH Daemon.',
-'<span class="ok">[  OK  ]</span> Started Login Service.',
 '<span class="ok">[  OK  ]</span> Reached target Multi-User System.',
-'<span class="ok">[  OK  ]</span> Reached target Graphical Interface.',
 '',
 'Arch Linux 6.9.3-arch1-1 (tty1)',
 '',
@@ -261,19 +213,18 @@ const L=[
 ];
 let i=0,done=false;
 function skip(){if(done)return;done=true;boot.classList.add('gone');hint.style.display='none';}
-boot.addEventListener('click',skip);
 (function step(){
   if(done)return;
   if(i>=L.length){
     log.innerHTML+='<span class="cur"></span>';
-    setTimeout(skip,2242);
+    setTimeout(skip,2000);
     return;
   }
   const line=L[i];
   log.innerHTML+=line+'\n';
   i++;
   const blank=line.trim()==='';
-  setTimeout(step, blank?70:(40+Math.random()*230));
+  setTimeout(step, blank?60:(30+Math.random()*120));
 })();
 </script>
 </body>
