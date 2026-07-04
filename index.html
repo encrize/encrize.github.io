@@ -11,7 +11,6 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0b" />
   <meta name="color-scheme" content="dark" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; img-src 'self' data: https://encrize.vip; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'" />
   <link rel="canonical" href="https://encrize.vip/" />
 
   <meta property="og:type" content="website" />
@@ -59,24 +58,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
-  <noscript>
-    <style>
-      #boot {
-        display: none !important;
-      }
-
-      html,
-      body {
-        height: auto !important;
-        overflow: auto !important;
-      }
-
-      .wrap {
-        height: auto !important;
-      }
-    </style>
-  </noscript>
 
   <style>
     :root {
@@ -131,35 +112,6 @@
         linear-gradient(rgba(10, 10, 11, var(--bg-shade)), rgba(10, 10, 11, var(--bg-shade))),
         var(--bg-img) center center / cover no-repeat fixed,
         var(--bg);
-    }
-
-    #boot {
-      position: fixed;
-      inset: 0;
-      z-index: 80;
-      background: #000;
-      color: #c9c9c9;
-      font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.7;
-      padding: 6vh 5vw;
-      white-space: pre-wrap;
-      transition: opacity .4s;
-      cursor: pointer;
-      overflow: hidden;
-    }
-
-    #boot.gone {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #boot .ok {
-      color: #46c84a;
-    }
-
-    #boot .dim {
-      color: var(--faint);
     }
 
     .cur {
@@ -666,8 +618,6 @@
 </head>
 <body>
 
-  <div id="boot" aria-hidden="true"><div id="bootlog"></div></div>
-
   <div class="marg r">// li4m1BRjawGHwRyaQjnZ</div>
 
   <main class="wrap">
@@ -705,15 +655,15 @@
         <aside class="neo" aria-label="system">
           <div class="bar"><span class="ttl">~/neofetch</span><span class="ctrl">— □ ✕</span></div>
           <div class="body">
-            <pre class="logo" aria-hidden="true">     
+            <pre class="logo" aria-hidden="true">      
         /\
        /  \
       /    \
      _\     \
     /        \
    /          \
-  /     __   \_\
- /     /  \     \
+  /      __   \_\
+ /      /  \      \
 /__,--'    '--,__\
 </pre>
             <div class="who"><b>encrize</b>@<b>node</b></div>
@@ -859,7 +809,7 @@
             <div class="tags"><span>js</span><span>html</span><span>tools</span></div>
             <div class="plinks">
               <a href="https://tools.gibsy.qd.je/" target="_blank" rel="noopener">live</a>
-              <a class="muted" href="https://github.com/encrize" target="_blank" rel="noopener">source</a>
+              <a class="muted" href="https://github.com/encriize" target="_blank" rel="noopener">source</a>
             </div>
           </div>
         </article>
@@ -881,45 +831,6 @@
       clk.textContent = [n.getHours(), n.getMinutes(), n.getSeconds()]
         .map(v => String(v).padStart(2, '0')).join(':');
     }, 1000);
-
-    const boot = document.getElementById('boot');
-    const log = document.getElementById('bootlog');
-    const L = [
-      '[    0.000000] Linux version 6.9.3-arch1-1 (linux@archlinux) (gcc 14.1.1) #1 SMP PREEMPT_DYNAMIC',
-      '[    0.488120] systemd[1]: systemd 256.4-1-arch running in system mode.',
-      '<span class="ok">[  OK  ]</span> Started Network Manager.',
-      '<span class="ok">[  OK  ]</span> Reached target Multi-User System.',
-      '',
-      'Arch Linux 6.9.3-arch1-1 (tty1)',
-      '',
-      'node login: <span class="dim">encrize</span>',
-      'Password: ',
-      'Last login: Fri Jul 1 20:01:54 on tty1',
-      '[encrize@node ~]$ cat about.txt'
-    ];
-    let i = 0, done = false;
-
-    function skip() {
-      if (done) return;
-      done = true;
-      boot.classList.add('gone');
-    }
-
-    boot.addEventListener('click', skip);
-
-    (function step() {
-      if (done) return;
-      if (i >= L.length) {
-        log.innerHTML += '<span class="cur"></span>';
-        setTimeout(skip, 1400);
-        return;
-      }
-      const line = L[i];
-      log.innerHTML += line + '\n';
-      i++;
-      const blank = line.trim() === '';
-      setTimeout(step, blank ? 60 : (30 + Math.random() * 120));
-    })();
   </script>
 </body>
 </html>
