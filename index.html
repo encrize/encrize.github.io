@@ -86,9 +86,8 @@
     :root {
       --bg: #0a0a0b;
       --paper: #0e0d0f;
-      --paper-2: #121013;
       --ink: #cac4b6;
-      --faint: #9a948a;
+      --faint: #b6b0a3;
       --red: #d8484d;
       --red-line: #9e1015;
       --green: #85a06e;
@@ -455,6 +454,20 @@
       box-shadow: 0 6px 24px rgba(0, 0, 0, .45);
     }
 
+    .pcard.featured {
+      border-color: #5c2422;
+      box-shadow: inset 0 2px 0 var(--red), 0 4px 22px rgba(216, 72, 77, .07);
+    }
+
+    .pcard.featured .bar {
+      background: #1b1417;
+      border-bottom-color: #3a2320;
+    }
+
+    .pcard.featured:hover {
+      box-shadow: inset 0 2px 0 var(--red), 0 6px 24px rgba(0, 0, 0, .45);
+    }
+
     .pcard .bar {
       display: flex;
       align-items: center;
@@ -469,8 +482,9 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--red-line);
-      box-shadow: 12px 0 0 #3a3a2a, 24px 0 0 #2d3a24;
+      background: var(--red);
+      box-shadow: 12px 0 0 #d8a43a, 24px 0 0 var(--green);
+      margin-right: 28px;
       flex: none;
     }
 
@@ -651,7 +665,7 @@
     <section class="hero">
       <div class="sys">node <b>encrize</b> · <span id="clock">--:--:--</span> · layer 01</div>
 
-      <h1 class="name" data-t="encrize">encrize<i>developer & reverse engineer</i><span class="sr-only"> - developer, reverse engineer and cybersecurity specialist working with C, Assembly, Kotlin, Android, web and game development.</span></h1>
+      <h1 class="name" data-t="encrize">encrize<i>developer &amp; reverse engineer</i><span class="sr-only"> - developer, reverse engineer and cybersecurity specialist working with C, Assembly, Kotlin, Android, web and game development.</span></h1>
 
       <div class="hero-grid">
         <div class="hero-main">
@@ -683,19 +697,19 @@
         <aside class="neo" aria-label="system">
           <div class="bar"><span class="ttl">~/neofetch</span><span class="ctrl">- □ ✕</span></div>
           <div class="body">
-            <pre class="logo" aria-hidden="true">      
+<pre class="logo" aria-hidden="true">
         /\
        /  \
       /    \
-     _\     \
+     *\     \
     /        \
    /          \
-  /      __  \_\
+  /      __  \*\
  /      /  \    \
-/__,--'    '--,__\
+/**,--'    '--,**\
 </pre>
             <div class="who"><b>encrize</b>@<b>node</b></div>
-            <div class="hr">-----------------</div>
+            <div class="hr">---------------------------------</div>
             <div class="row"><span class="k">os</span><span class="v">Arch Linux x86_64</span></div>
             <div class="row"><span class="k">shell</span><span class="v">zsh</span></div>
             <div class="row"><span class="k">editor</span><span class="v">nvim</span></div>
@@ -724,7 +738,7 @@
       </div>
       <div class="stack">
         <span><b>re</b> / malware analysis</span>
-        <span><b>c</b> & <b>assembly</b></span>
+        <span><b>c</b> &amp; <b>assembly</b></span>
         <span><b>kotlin</b> / android</span>
         <span><b>jetpack compose</b></span>
         <span><b>js</b> / <b>ts</b> / node</span>
@@ -743,7 +757,7 @@
 
       <div class="grid">
 
-        <article class="pcard">
+        <article class="pcard featured">
           <div class="bar"><span class="dot"></span><span class="fn">fukOS/</span><span class="kind">c · asm · osdev</span></div>
           <div class="body">
             <h3>fukOS</h3>
@@ -755,7 +769,7 @@
           </div>
         </article>
 
-        <article class="pcard">
+        <article class="pcard featured">
           <div class="bar"><span class="dot"></span><span class="fn">bytefall/</span><span class="kind">c · sdl2</span></div>
           <div class="body">
             <h3>bytefall</h3>
@@ -767,7 +781,7 @@
           </div>
         </article>
 
-        <article class="pcard">
+        <article class="pcard featured">
           <div class="bar"><span class="dot"></span><span class="fn">bad-apple-in-160kb/</span><span class="kind">demoscene</span></div>
           <div class="body">
             <h3>Bad Apple in 160kb</h3>
@@ -865,14 +879,14 @@
   </main>
 
   <script>
-const clk = document.getElementById('clock');
-function updateClock() {
-  const n = new Date();
-  clk.textContent = [n.getHours(), n.getMinutes(), n.getSeconds()]
-    .map(v => String(v).padStart(2, '0')).join(':');
-}
-updateClock();
-setInterval(updateClock, 1000);
+    const clk = document.getElementById('clock');
+    function updateClock() {
+      const n = new Date();
+      clk.textContent = [n.getHours(), n.getMinutes(), n.getSeconds()]
+        .map(v => String(v).padStart(2, '0')).join(':');
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
