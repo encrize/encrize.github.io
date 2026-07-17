@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Encrize - Developer & Reverse Engineer</title>
-  <meta name="description" content="Official website of Encrize - developer, reverse engineer and cybersecurity specialist working with C, Assembly, Kotlin, Android and web technologies." />
+  <title>Encrize — Developer & Reverse Engineer</title>
+  <meta name="description" content="Official website of Encrize - developer, reverse engineer and cybersecurity specialist building fukOS, fuk1 and low-level software in C and Assembly." />
   <meta name="author" content="Encrize" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0a0a0b" />
@@ -15,8 +15,8 @@
   <link rel="alternate" hreflang="x-default" href="https://encrize.vip/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Encrize - Developer & Reverse Engineer" />
-  <meta property="og:description" content="Official website of Encrize - developer, reverse engineer and cybersecurity specialist. Explore projects, skills and contact links." />
+  <meta property="og:title" content="Encrize — Developer & Reverse Engineer" />
+  <meta property="og:description" content="Official website of Encrize — developer, reverse engineer and cybersecurity specialist. Explore projects, skills and contact links." />
   <meta property="og:url" content="https://encrize.vip/" />
   <meta property="og:site_name" content="Encrize" />
   <meta property="og:locale" content="en_US" />
@@ -24,13 +24,13 @@
   <meta property="og:image:secure_url" content="https://file.garden/abFLf7yYMGYIwx9m/encrize.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Encrize - developer and reverse engineer" />
+  <meta property="og:image:alt" content="Encrize — developer and reverse engineer" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Encrize - Developer & Reverse Engineer" />
-  <meta name="twitter:description" content="Official website of Encrize - developer, reverse engineer and cybersecurity specialist." />
+  <meta name="twitter:title" content="Encrize — Developer & Reverse Engineer" />
+  <meta name="twitter:description" content="Official website of Encrize — developer, reverse engineer and cybersecurity specialist." />
   <meta name="twitter:image" content="https://file.garden/abFLf7yYMGYIwx9m/encrize.png" />
-  <meta name="twitter:image:alt" content="Encrize - developer and reverse engineer" />
+  <meta name="twitter:image:alt" content="Encrize — developer and reverse engineer" />
 
   <meta name="google-site-verification" content="u5p36DkipJJdKI4GNd_N0NUJFrZMdanu0Fwqg-a53Mc" />
 
@@ -46,7 +46,7 @@
         "url": "https://encrize.vip/",
         "name": "Encrize",
         "alternateName": "encrize.vip",
-        "description": "Official website of Encrize - developer, reverse engineer and cybersecurity specialist.",
+        "description": "Official website of Encrize — developer, reverse engineer and cybersecurity specialist.",
         "inLanguage": "en",
         "publisher": { "@id": "https://encrize.vip/#person" }
       },
@@ -54,7 +54,7 @@
         "@type": "Person",
         "@id": "https://encrize.vip/#person",
         "name": "Encrize",
-        "alternateName": ["encrize", "encrize dev"],
+        "alternateName": ["encrize", "encrize dev", "Gibsy"],
         "url": "https://encrize.vip/",
         "image": "https://file.garden/abFLf7yYMGYIwx9m/encrize.png",
         "jobTitle": "Developer and Reverse Engineer",
@@ -257,6 +257,11 @@
 
     .win .body p:last-child {
       margin-bottom: 0;
+    }
+
+    .win .body strong {
+      color: var(--green);
+      font-weight: 600;
     }
 
     .win .body .sig {
@@ -651,12 +656,14 @@
       <div class="hero-grid">
         <div class="hero-main">
           <section class="win" aria-label="about">
-            <div class="bar"><span class="ttl">~/about.txt</span><span class="ctrl">- □ ✕</span></div>
+            <div class="bar"><span class="ttl">~/about.txt</span><span class="ctrl">— □ ✕</span></div>
             <div class="body" id="about">
-              <p>hey, i'm encrize - 18y.o. developer and cybersecurity specialist. i'm online most of the time, lately messing around with my projects or studying.</p>
-              <p>i make websites, apps, and games, but honestly most of my time goes into reverse engineering and malware analysis - c and assembly, poking at binaries until they tell me what they're hiding. there's something satisfying about taking something apart piece by piece until it finally makes sense.</p>
-              <p>i guess breaking stuff to understand it is just... my thing. welcome to my corner of the internet - i built this because i love the old-school 2000s web, back when people made personal sites instead of profiles on big platforms.</p>
-              <p>feel free to check my projects below or text me if you want to talk!</p>
+              <p>hey, i'm encrize - an 18-year-old developer and cybersecurity specialist. i'm usually online, building something, taking something apart, or trying to figure out why it broke.</p>
+              <p>i make websites, apps, games, and low-level software, but most of my time goes into reverse engineering and malware analysis.</p>
+              <p>when i'm not tearing software apart, i'm building it. right now i'm working on <strong>fukOS</strong>, my own 32-bit x86 hobby operating system written from scratch in c and assembly, along with <strong>fuk1</strong> - a custom interpreted programming language designed to run on top of it.</p>
+              <p>i like projects that force me to understand what is actually happening under the hood. no magic, no giant frameworks - just code, mistakes, debugging, and the occasional moment when everything somehow works.</p>
+              <p>this site is my little corner of the internet, inspired by the old-school 2000s web - back when people built personal websites instead of collecting profiles on big platforms.</p>
+              <p>feel free to explore my projects below or text me if you want to talk!</p>
               <p class="sig">- encrize</p>
               <p class="prompt">encrize@node:~<span class="cur"></span></p>
             </div>
@@ -674,7 +681,7 @@
         </div>
 
         <aside class="neo" aria-label="system">
-          <div class="bar"><span class="ttl">~/neofetch</span><span class="ctrl">- □ ✕</span></div>
+          <div class="bar"><span class="ttl">~/neofetch</span><span class="ctrl">— □ ✕</span></div>
           <div class="body">
             <pre class="logo" aria-hidden="true">      
         /\
@@ -731,7 +738,7 @@
       <div class="sec-head">
         <span class="p">encrize@node:~$</span>
         <h2 class="t" id="projects-heading">ls ~/projects</h2>
-        <span class="n">8 entries</span>
+        <span class="n">9 entries</span>
       </div>
 
       <div class="grid">
@@ -740,7 +747,7 @@
           <div class="bar"><span class="dot"></span><span class="fn">fukOS/</span><span class="kind">c · asm · osdev</span></div>
           <div class="body">
             <h3>fukOS</h3>
-            <p>fukOS is a hobby 32-bit x86 operating system written in C. The kernel is freestanding, uses its own drivers and runtime helpers. It also include FUK programming language.</p>
+            <p>fukOS is a hobby 32-bit x86 operating system written in C. The kernel is freestanding and uses its own drivers and runtime helpers. It also includes fuk1, a custom interpreted programming language designed to run on top of it.</p>
             <div class="tags"><span>c</span><span>osdev</span><span>asm</span></div>
             <div class="plinks">
               <a class="muted" href="https://github.com/encrize/fukOS" target="_blank" rel="noopener">source</a>
@@ -851,19 +858,21 @@
     </section>
 
     <footer class="foot">
-      <span>last update: <span class="rev">03.07.2026</span></span>
+      <span>last update: <span class="rev">17.07.2026</span></span>
       <span>encrize</span>
     </footer>
 
   </main>
 
   <script>
-    const clk = document.getElementById('clock');
-    setInterval(() => {
-      const n = new Date();
-      clk.textContent = [n.getHours(), n.getMinutes(), n.getSeconds()]
-        .map(v => String(v).padStart(2, '0')).join(':');
-    }, 1000);
+const clk = document.getElementById('clock');
+function updateClock() {
+  const n = new Date();
+  clk.textContent = [n.getHours(), n.getMinutes(), n.getSeconds()]
+    .map(v => String(v).padStart(2, '0')).join(':');
+}
+updateClock();
+setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
