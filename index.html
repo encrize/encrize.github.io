@@ -81,10 +81,36 @@
   ]
 }
 </script>
-</head>
-<body bgcolor="#FFFFFF" text="#000000" link="#0000EE" vlink="#551A8B" alink="#FF0000">
 
-<basefont size="3" face="Times New Roman, Times, serif">
+<style>
+  body{
+    background:#FFFFFF;
+    color:#000000;
+    font-family:"Times New Roman", Times, serif;
+    font-size:16px;
+    line-height:1.5;
+    margin:16px;
+  }
+  a{ color:#0000EE; }
+  a:visited{ color:#551A8B; }
+  a:active{ color:#FF0000; }
+  /* Give every link a comfortable tap/click target (>=24px) and breathing room */
+  a{
+    display:inline-block;
+    padding:6px 4px;
+    min-height:24px;
+    line-height:1.4;
+  }
+  h2{ margin-top:1.4em; }
+  ul{ margin:0.6em 0; padding-left:26px; }
+  /* space list items so adjacent targets are not too close */
+  li{ margin:10px 0; }
+  .contact li{ margin:4px 0; }
+  .contact a{ padding:10px 6px; }
+</style>
+</head>
+<body>
+<main>
 
 <center>
 <h1>encrize's home page</h1>
@@ -122,7 +148,7 @@ Feel free to explore my projects below, or send me a message if you want to talk
 <hr>
 
 <h2>Contact</h2>
-<ul>
+<ul class="contact">
 <li><a href="https://github.com/encrize">GitHub</a></li>
 <li><a href="https://t.me/encrize">Telegram</a></li>
 <li><a href="https://www.youtube.com/@encrize">YouTube</a></li>
@@ -149,45 +175,46 @@ Feel free to explore my projects below, or send me a message if you want to talk
 <ul>
 <li>
   <b>fukOS</b> &mdash; 32-bit x86 hobby OS in C and Assembly, with the fuk1
-  language on top. [<a href="https://github.com/encrize/fukOS">source</a>]
+  language on top.
+  [<a href="https://github.com/encrize/fukOS" aria-label="fukOS source code on GitHub">source</a>]
 </li>
 <li>
   <b>bytefall</b> &mdash; raw-data visualizer that renders any file as pixels
   and audio. Written in C with SDL2.
-  [<a href="https://github.com/encrize/bytefall">source</a>]
+  [<a href="https://github.com/encrize/bytefall" aria-label="bytefall source code on GitHub">source</a>]
 </li>
 <li>
   <b>Bad Apple in 160kb</b> &mdash; the whole Bad Apple!! animation squeezed
   into about 160 kb.
-  [<a href="https://github.com/encrize/bad-apple-in-160kb">source</a>]
+  [<a href="https://github.com/encrize/bad-apple-in-160kb" aria-label="Bad Apple in 160kb source code on GitHub">source</a>]
 </li>
 <li>
   <b>oscilloscope</b> &mdash; oscilloscope-style X/Y renderer for vector and
   audio-driven visuals.
-  [<a href="https://github.com/encrize/oscilloscope">source</a>]
+  [<a href="https://github.com/encrize/oscilloscope" aria-label="oscilloscope source code on GitHub">source</a>]
 </li>
 <li>
   <b>encrize.vip</b> &mdash; the source of my personal web site.
-  [<a href="https://encrize.vip/">live</a>]
+  [<a href="https://encrize.vip/" aria-label="encrize.vip live web site">live</a>]
 </li>
 <li>
   <b>Personal New Page</b> &mdash; a custom browser new-tab / start page,
   a minimal personal dashboard with quick links.
-  [<a href="https://github.com/encrize/Personal-New-Page">source</a>]
+  [<a href="https://github.com/encrize/Personal-New-Page" aria-label="Personal New Page source code on GitHub">source</a>]
 </li>
 <li>
   <b>AniWired</b> &mdash; self-hosted, minimal anime streaming app
   (vanilla JS single page app).
-  [<a href="https://anime.encrize.vip/">live</a>]
+  [<a href="https://anime.encrize.vip/" aria-label="AniWired live app">live</a>]
 </li>
 <li>
   <b>Gifty</b> &mdash; universal gift tracker built with Kotlin and Jetpack
   Compose. Backups in JSON, CSV and PDF.
-  [<a href="https://github.com/encrize">source</a>]
+  [<a href="https://github.com/encrize" aria-label="Gifty source on GitHub profile">source</a>]
 </li>
 <li>
   <b>GibsyLab</b> &mdash; all-in-one suite of free web utilities and tools.
-  [<a href="https://tools.gibsy.qd.je/">live</a>]
+  [<a href="https://tools.gibsy.qd.je/" aria-label="GibsyLab live web tools">live</a>]
 </li>
 </ul>
 
@@ -200,5 +227,6 @@ Copyright encrize. This page is always under construction.
 </small>
 </p>
 
+</main>
 </body>
 </html>
